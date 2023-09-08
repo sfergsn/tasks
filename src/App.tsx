@@ -7,7 +7,7 @@ function App(): JSX.Element {
         <div className="App">
             <h1 style={{ backgroundColor: "#4dc1f2" }}>This is header text</h1>
             <img
-                src={require("/Users/sferg/tasks/src/IMG_2619.jpeg")}
+                src={require("./src/IMG_2619.jpeg")}
                 alt="A picture of cows in Ireland"
             />
             <header className="App-header">
