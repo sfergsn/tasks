@@ -26,23 +26,27 @@ function App(): JSX.Element {
             <p></p>
             <Container>
                 <Row>
-                    <Col
-                        style={{
-                            backgroundColor: "red",
-                            width: "200",
-                            height: "400"
-                        }}
-                    >
-                        Column 1
+                    <Col>
+                        <div
+                            style={{
+                                backgroundColor: "red",
+                                width: "200",
+                                height: "400"
+                            }}
+                        >
+                            Column 1
+                        </div>
                     </Col>
-                    <Col
-                        style={{
-                            backgroundColor: "red",
-                            width: "200",
-                            height: "400"
-                        }}
-                    >
-                        Column 2
+                    <Col>
+                        <div
+                            style={{
+                                backgroundColor: "red",
+                                width: "200",
+                                height: "400"
+                            }}
+                        >
+                            Column 2
+                        </div>
                     </Col>
                 </Row>
             </Container>
