@@ -4,6 +4,8 @@ import {
     shout,
     isQuestion,
     convertYesNo
+    /*isOdd,
+    length*/
 } from "./functions";
 
 describe("Testing the basic functions", () => {
@@ -56,4 +58,12 @@ describe("Testing the basic functions", () => {
         expect(convertYesNo("Yesterday")).toBe(null);
         expect(convertYesNo("Maybe")).toBe(null);
     });
+
+    /*test("Testing the isOdd function", () => {
+        expect(isOdd(9)).toBe(true);
+    });
+
+    test("Testing the length function", () => {
+        expect(length("HI")).toBe(2);
+    });*/
 });
