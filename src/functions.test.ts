@@ -3,9 +3,10 @@ import {
     fahrenheitToCelius,
     shout,
     isQuestion,
-    convertYesNo
-    /*isOdd,
-    length*/
+    convertYesNo,
+    isOdd,
+    start,
+    checkCaps
 } from "./functions";
 
 describe("Testing the basic functions", () => {
@@ -59,11 +60,18 @@ describe("Testing the basic functions", () => {
         expect(convertYesNo("Maybe")).toBe(null);
     });
 
-    /*test("Testing the isOdd function", () => {
+    test("Testing the isOdd function", () => {
         expect(isOdd(9)).toBe(true);
+        expect(isOdd(12)).toBe(false);
     });
 
-    test("Testing the length function", () => {
-        expect(length("HI")).toBe(2);
-    });*/
+    test("Testing the start function", () => {
+        expect(start("HI")).toBe("H");
+        expect(start("what is up")).toBe("w");
+    });
+
+    test("Testing the checkCaps function", () => {
+        expect(checkCaps("HI")).toBe(true);
+        expect(checkCaps("what is up")).toBe(false);
+    });
 });
