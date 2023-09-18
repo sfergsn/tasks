@@ -5,7 +5,7 @@
     isQuestion,
     convertYesNo,
     isOdd,
-    length
+    start
 } from "./functions";*/
 
 /**
@@ -87,13 +87,27 @@ export function convertYesNo(word: string): boolean | null {
  * Checks to see if number passed in is odd. Returns true if odd, and false if even
  *
  */
-/*export function isOdd(num: number): boolean {
-    return true;
+export function isOdd(num: number): boolean {
+    let odd = true;
+    if (num % 2 === 0) {
+        odd = false;
+    }
+    return odd;
 }
 
-export function length(word: string): number {
-    return 0;
-}*/
+export function start(word: string): string {
+    return word.charAt(0);
+}
+
+export function checkCaps(word: string): boolean {
+    let caps = true;
+    const newWord: string = word.toUpperCase();
+    if (newWord !== word) {
+        caps = false;
+    }
+    return caps;
+}
+
 describe("Testing the basic functions", () => {
     test("Testing the fahrenheitToCelius function", () => {
         expect(fahrenheitToCelius(32)).toBe(0);
@@ -145,11 +159,18 @@ describe("Testing the basic functions", () => {
         expect(convertYesNo("Maybe")).toBe(null);
     });
 
-    /*test("Testing the isOdd function", () => {
+    test("Testing the isOdd function", () => {
         expect(isOdd(9)).toBe(true);
+        expect(isOdd(12)).toBe(false);
     });
 
     test("Testing the length function", () => {
-        expect(length("HI")).toBe(2);
-    });*/
+        expect(start("HI")).toBe("H");
+        expect(start("what is up")).toBe("w");
+    });
+
+    test("Testing the checkCaps function", () => {
+        expect(checkCaps("HI")).toBe(true);
+        expect(checkCaps("what is up")).toBe(false);
+    });
 });
