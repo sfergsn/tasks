@@ -8,7 +8,7 @@ import { Button } from "react-bootstrap";
     | "Christmas";*/
 
 export function CycleHoliday(): JSX.Element {
-    const [holiday, setHoliday] = useState<string>("Birthday");
+    const [holiday, setHoliday] = useState<string>("Festivus");
     const advanceByAlphabet: Record<string, string> = {
         Birthday: "Christmas",
         Christmas: "Festivus",
@@ -23,6 +23,18 @@ export function CycleHoliday(): JSX.Element {
         Festivus: "Christmas",
         Christmas: "Birthday"
     };
+    /*{
+        holiday === "Festivus" ? <span>Holiday: 💈</span> : <span></span>;
+    }
+    {
+        holiday === "Halloween" ? <span>Holiday: 🎃</span> : <span></span>;
+    }
+    {
+        holiday === "Christmas" ? <span>Holiday: 🎄</span> : <span></span>;
+    }
+    {
+        holiday === "Thanksgiving" ? <span>Holiday: 🦃</span> : <span></span>;
+    }*/
     return (
         <div>
             <Button onClick={() => setHoliday(advanceByAlphabet[holiday])}>
@@ -31,11 +43,15 @@ export function CycleHoliday(): JSX.Element {
             <Button onClick={() => setHoliday(advanceByYear[holiday])}>
                 Advance by Year
             </Button>
-            {holiday === "Birthday" ? <span>Holiday: 🎂</span> : <span></span>}
-            {holiday === "Festivus" ? <span>Holiday: 💈</span> : <span></span>}
-            {holiday === "Halloween" ? <span>Holiday: 🎃</span> : <span></span>}
-            {holiday === "Christmas" ? <span>Holiday: 🎄</span> : <span></span>}
-            {holiday === "Thanksgiving" ? (
+            {holiday === "Birthday" ? (
+                <span>Holiday: 🎂</span>
+            ) : holiday === "Festivus" ? (
+                <span>Holiday: 💈</span>
+            ) : holiday === "Halloween" ? (
+                <span>Holiday: 🎃</span>
+            ) : holiday === "Christmas" ? (
+                <span>Holiday: 🎄</span>
+            ) : holiday === "Thanksgiving" ? (
                 <span>Holiday: 🦃</span>
             ) : (
                 <span></span>
