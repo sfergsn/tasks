@@ -20,12 +20,13 @@ export function TwoDice(): JSX.Element {
             <span data-testid="right-die">{rightDie}</span>;
             <Button onClick={() => setLeftDie(d6())}>Roll Left</Button>
             <Button onClick={() => setRightDie(d6())}>Roll Right</Button>
-            {leftDie === rightDie ? (
-                leftDie === 1 ? (
-                    <span>Lose</span>
-                ) : (
-                    <span>Win</span>
-                )
+            {leftDie === rightDie && leftDie === 1 ? (
+                <span>Lose</span>
+            ) : (
+                <span></span>
+            )}
+            {leftDie === rightDie && leftDie != 1 ? (
+                <span>Win</span>
             ) : (
                 <span></span>
             )}
